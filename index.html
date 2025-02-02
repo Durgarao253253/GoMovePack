@@ -1,56 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Packer & Mover Services</title>
-  <!-- Use relative path for CSS -->
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Packer & Mover Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #36454F;
+            --secondary: #FAF9F6;
+            --accent: #90EE90;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: var(--secondary);
+            color: var(--primary);
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem;
+            background: var(--primary);
+            color: var(--secondary);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .hero {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+        }
+
+        .moving-animation {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        footer {
+            background: var(--primary);
+            color: var(--secondary);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        /* SVG Animation */
+        #box {
+            animation: lift 3s ease-in-out infinite;
+            transform-origin: bottom;
+        }
+
+        #person-arm {
+            animation: arm-move 3s ease-in-out infinite;
+        }
+
+        @keyframes lift {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-40px); }
+        }
+
+        @keyframes arm-move {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(-20deg); }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Packer & Mover Services</h1>
-    <p>Reliable and Efficient Moving Solutions</p>
-  </header>
+    <header>
+        <h1>Premium Packer & Mover</h1>
+        <p>Your Trusted Relocation Partner</p>
+    </header>
 
-  <main>
-    <section class="animation-section">
-      <svg id="moving-svg" width="400" height="300" viewBox="0 0 400 300">
-        <!-- Delivery Van -->
-        <rect x="50" y="150" width="200" height="80" fill="#36454F" />
-        <rect x="70" y="130" width="160" height="40" fill="#36454F" />
-        <circle cx="100" cy="230" r="20" fill="#FAF9F6" />
-        <circle cx="200" cy="230" r="20" fill="#FAF9F6" />
+    <div class="hero">
+        <div class="moving-animation">
+            <svg viewBox="0 0 800 400" style="width: 100%; height: 100%;">
+                <!-- Delivery Truck -->
+                <path d="M100 250 L100 200 L300 200 L300 250 L280 250 L280 280 L120 280 L120 250 Z" fill="var(--primary)"/>
+                <rect x="120" y="180" width="160" height="20" fill="var(--primary)"/>
+                <circle cx="140" cy="280" r="20" fill="var(--secondary)"/>
+                <circle cx="260" cy="280" r="20" fill="var(--secondary)"/>
+                
+                <!-- Person -->
+                <path id="person-arm" d="M500 220 L520 200 L540 220 L540 260 L520 280 L500 260 Z" fill="var(--accent)"/>
+                <circle cx="520" cy="200" r="15" fill="var(--accent)"/>
+                <rect x="510" y="200" width="20" height="80" fill="var(--accent)"/>
+                
+                <!-- Animated Box -->
+                <rect id="box" x="450" y="180" width="40" height="40" fill="var(--accent)">
+                    <animate attributeName="x" from="450" to="400" dur="3s" repeatCount="indefinite"/>
+                </rect>
+                
+                <!-- Motion Lines -->
+                <path d="M400 250 L450 250" stroke="var(--accent)" stroke-width="2" stroke-dasharray="4">
+                    <animate attributeName="opacity" from="1" to="0" dur="1s" repeatCount="indefinite"/>
+                </path>
+            </svg>
+        </div>
+    </div>
 
-        <!-- Person -->
-        <circle cx="300" cy="180" r="10" fill="#90EE90" />
-        <line x1="300" y1="190" x2="300" y2="220" stroke="#90EE90" stroke-width="4" />
-        <line x1="300" y1="200" x2="280" y2="210" stroke="#90EE90" stroke-width="4" />
-        <line x1="300" y1="200" x2="320" y2="210" stroke="#90EE90" stroke-width="4" />
-        <line x1="300" y1="220" x2="280" y2="240" stroke="#90EE90" stroke-width="4" />
-        <line x1="300" y1="220" x2="320" y2="240" stroke="#90EE90" stroke-width="4" />
+    <div class="services-grid">
+        <div class="service-card">
+            <h3><i class="fas fa-box-open"></i> Home Relocation</h3>
+            <p>Safe and efficient residential moving services</p>
+        </div>
+        <div class="service-card">
+            <h3><i class="fas fa-building"></i> Office Shifting</h3>
+            <p>Professional corporate relocation solutions</p>
+        </div>
+        <div class="service-card">
+            <h3><i class="fas fa-people-carry"></i> Loading Help</h3>
+            <p>Expert packing and heavy lifting services</p>
+        </div>
+        <div class="service-card">
+            <h3><i class="fas fa-shield-alt"></i> Insurance</h3>
+            <p>Full-value protection for your belongings</p>
+        </div>
+    </div>
 
-        <!-- Box -->
-        <rect id="box" x="250" y="160" width="30" height="30" fill="#90EE90" />
-      </svg>
-    </section>
-
-    <section class="services">
-      <h2>Our Services</h2>
-      <ul>
-        <li>Home Relocation</li>
-        <li>Office Shifting</li>
-        <li>Packing Services</li>
-        <li>Loading & Unloading</li>
-      </ul>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2023 Packer & Mover Services. All rights reserved.</p>
-  </footer>
-
-  <!-- Use relative path for JavaScript -->
-  <script src="script.js"></script>
+    <footer>
+    </footer>
 </body>
 </html>
